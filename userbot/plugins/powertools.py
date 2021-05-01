@@ -4,8 +4,8 @@ from os import execl
 from . import BOTLOG, BOTLOG_CHATID, HEROKU_APP, bot, mention
 
 
-@icssbot.on(admin_cmd(pattern="اعادة تشغيل$"))
-@icssbot.on(sudo_cmd(pattern="اعادة تشغيل$", allow_sudo=True))
+@icssbot.on(admin_cmd(pattern="رست|اعادة تشغيل$"))
+@icssbot.on(sudo_cmd(pattern="رست|اعادة تشغيل$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
