@@ -73,6 +73,7 @@ def load_module(shortname):
         mod.CMD_HELP = CMD_HELP
         mod.reply_id = reply_id
         mod.rd = reply_id
+        mod.tosh_cmd = tosh_cmd
         mod.admin_cmd = admin_cmd
         mod.icss_cmd = admin_cmd
         mod._icssutils = _icssutils
