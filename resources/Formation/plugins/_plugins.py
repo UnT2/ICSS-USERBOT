@@ -93,12 +93,8 @@ ICSS_IMG = Config.ALIVE_PIC or "https://telegra.ph/file/499596b18292c0e43ac56.jp
 ICSS_TEXT = Config.CUSTOM_ALIVE_TEXT or "𓆩 𝑾𝑬𝑳𝑪𝑶𝑴𝑬 𝑻𝑶 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 𓆪"
 ICSEM = Config.CUSTOM_ALIVE_EMOJI or "  ⌔∮ "
 
-icsupt = await get_readable_time((time.time() - StartTime))
-_, check_sgnirts = check_data_base_heal_th()
-
 ics_c = f"**{ICSS_TEXT}**\n"
 ics_c += f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻 \n"
-ics_c += f"**{ICSEM} قاعدة البيانات ↫** `{check_sgnirts}`\n"
 ics_c += f"**{ICSEM} اصدار التليثون  ↫** `{version.__version__}\n`"
 ics_c += f"**{ICSEM} اصدار اڪسس ↫** `{icsv}`\n"
 ics_c += f"**{ICSEM} اصدار البايثون ↫** `{python_version()}\n`"
@@ -108,11 +104,9 @@ ics_c += f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\
 
 ALt = (
     f"**{ICSS_TEXT}**\n\n"
-    f"**{ICSEM} قاعدة البيانات ↫**  `{check_sgnirts}`\n"
     f"**{ICSEM} اصدار التليثون  ↫** `{version.__version__}\n`"
     f"**{ICSEM} اصدار اڪسس ↫** `{icsv}`\n"
     f"**{ICSEM} اصدار البايثون  ↫** `{python_version()}\n`"
-    f"**{ICSEM} مدة التشغيل ↫** `{icsupt}\n`"
     f"**{ICSEM} المستخدم ↫** {mention}\n",
 )
 
