@@ -1,5 +1,4 @@
-
-from resources.strings import *
+from . import *
 
 @icssbot.on(
     icss_cmd(
@@ -11,10 +10,10 @@ from resources.strings import *
     sudo_cmd(pattern="سورس$", allow_sudo=True)
 )
 async def ica(icss):
-    ics_id = await rd(icss)
+    ics_id = await reply_id(icss)
     await icss.client.send_file(
         icss.chat_id, ICSS_IMG, caption=ics_c, reply_to=ics_id
     )
     await icss.delete()
-
+         
 CMD_HELP.update({"alive": "{}".format(alv)})
