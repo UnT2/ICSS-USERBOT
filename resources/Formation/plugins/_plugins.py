@@ -94,7 +94,7 @@ ICSS_IMG = Config.ALIVE_PIC or "https://telegra.ph/file/499596b18292c0e43ac56.jp
 ICSS_TEXT = Config.CUSTOM_ALIVE_TEXT or "𓆩 𝑾𝑬𝑳𝑪𝑶𝑴𝑬 𝑻𝑶 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 𓆪"
 ICSEM = Config.CUSTOM_ALIVE_EMOJI or "  ⌔∮ "
 
-_, check_sgnirts = check_data_base_heal_th()
+check_sgnirts = check_data_base_heal_th()
 
 ics_c = f"**{ICSS_TEXT}**\n"
 ics_c += f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻 \n"
