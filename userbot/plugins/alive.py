@@ -12,8 +12,8 @@ async def ping(e):
     S = datetime.now()
     e = await eor(e, "⌭")
     E = datetime.now()
-    M = (E - S).microseconds / 1000
-    await eor(e, Ping.format(M))
+    Ms = (E - S).microseconds / 1000
+    await eor(e, Ping.format(Ms, mention))
 
          
 CMD_HELP.update({"alive": "{}".format(alv)})
