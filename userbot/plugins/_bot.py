@@ -16,4 +16,4 @@ async def ping(e):
     await eor(e, Ping.format(Ms, mention))
 
          
-CMD_HELP.update({"alive": "{}".format(alv)})
+CMD_HELP.update({"Bot": "{}".format(alv)})
