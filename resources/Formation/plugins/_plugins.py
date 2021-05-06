@@ -183,6 +183,24 @@ def set_key(dictionary, key, value):
         dictionary[key] = [dictionary[key], value]
 
 
+def check_data_base_heal_th():
+     is_database_working = False
+     output = "لم يتم تعيين قاعدة بيانات"
+     if not Config.DB_URI:
+         return is_database_working, output
+     from userbot.plugins.sql_helper import SESSION
+
+     try:
+         SESSION.execute("SELECT 1")
+     except Exception as e:
+         output = f"❌ {str(e)}"
+         is_database_working = False
+     else:
+         output = "تعمل بنجاح"
+         is_database_working = True
+     return is_database_working, output
+
+
 async def icsa():
     _, check_sgnirts = check_data_base_heal_th()
     sudo = "Enabled" if Config.SUDO_USERS else "Disabled"
