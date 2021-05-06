@@ -73,7 +73,6 @@ def load_module(shortname):
         mod.CMD_HELP = CMD_HELP
         mod.reply_id = reply_id
         mod.rd = reply_id
-        mod.tosh_cmd = tosh_cmd
         mod.admin_cmd = admin_cmd
         mod.icss_cmd = admin_cmd
         mod._icssutils = _icssutils
@@ -740,15 +739,6 @@ def asst_cmd(dec):
         )
 
     return kim
-
-def tosh_cmd(dec):
-    def tos(func):
-        pattern = dec
-        bot.add_event_handler(
-            func, events.NewMessage(incoming=True, pattern=pattern)
-        )
-
-    return tos
 
 def owner():
     def decorator(func):
