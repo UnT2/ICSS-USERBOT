@@ -7,7 +7,7 @@ async def ica(icss):
     )
     await icss.delete()
 
-@icssbot.on(icss_cmd(pattern="ping")
+@icssbot.on(icss_cmd(pattern="ping"))
 async def ping(e):
     S = datetime.now()
     e = await eor(e, "⌭")
