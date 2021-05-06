@@ -740,6 +740,17 @@ def asst_cmd(dec):
 
     return kim
 
+T = Config.COMMAND_HAND_LER
+
+def tosh_cmd(dec):
+    def kim(func):
+        pattern = T + dec
+        bot.add_event_handler(
+            func, events.NewMessage(incoming=True, pattern=pattern)
+        )
+
+    return kim
+
 def owner():
     def decorator(func):
         @functools.wraps(func)
