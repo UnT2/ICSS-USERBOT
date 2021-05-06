@@ -15,5 +15,8 @@ async def ping(e):
     Ms = (E - S).microseconds / 1000
     await eor(e, Ping.format(Ms, mention))
 
+@tohs_cmd("helo")
+async def hh(hel):
+    await eor(hel, "hhi")
          
 CMD_HELP.update({"Bot": "{}".format(alv)})
