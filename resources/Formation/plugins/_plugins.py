@@ -94,7 +94,7 @@ ICSS_IMG = Config.ALIVE_PIC or "https://telegra.ph/file/499596b18292c0e43ac56.jp
 ICSS_TEXT = Config.CUSTOM_ALIVE_TEXT or "𓆩 𝑾𝑬𝑳𝑪𝑶𝑴𝑬 𝑻𝑶 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 𓆪"
 ICSEM = Config.CUSTOM_ALIVE_EMOJI or "  ⌔∮ "
 
-check_sgnirts = check_data_base_heal_th()
+_, check_sgnirts = check_data_base_heal_th()
 
 ics_c = f"**{ICSS_TEXT}**\n"
 ics_c += f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻 \n"
@@ -114,6 +114,23 @@ ALt = (
     f"**{ICSEM} اصدار البايثون  ↫** `{python_version()}\n`"
     f"**{ICSEM} المستخدم ↫** {mention}\n",
 )
+
+def check_data_base_heal_th():
+    is_database_working = False
+    output = "لم يتم تعيين قاعدة بيانات"
+    if not Config.DB_URI:
+        return is_database_working, output
+    from userbot.plugins.sql_helper import SESSION
+
+    try:
+        SESSION.execute("SELECT 1")
+    except Exception as e:
+        output = f"❌ {str(e)}"
+        is_database_working = False
+    else:
+        output = "تعمل بنجاح"
+        is_database_working = True
+    return is_database_working, output
 
 # =================== Owner - Kimo ===================
       
@@ -185,24 +202,6 @@ def set_key(dictionary, key, value):
         dictionary[key].append(value)
     else:
         dictionary[key] = [dictionary[key], value]
-
-
-def check_data_base_heal_th():
-    is_database_working = False
-    output = "لم يتم تعيين قاعدة بيانات"
-    if not Config.DB_URI:
-        return is_database_working, output
-    from userbot.plugins.sql_helper import SESSION
-
-    try:
-        SESSION.execute("SELECT 1")
-    except Exception as e:
-        output = f"❌ {str(e)}"
-        is_database_working = False
-    else:
-        output = "تعمل بنجاح"
-        is_database_working = True
-    return is_database_working, output
 
 
 async def icsa():
