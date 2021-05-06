@@ -111,23 +111,6 @@ ALt = (
     f"**{ICSEM} المستخدم ↫** {mention}\n",
 )
 
-def check_data_base_heal_th():
-    is_database_working = False
-    output = "لم يتم تعيين قاعدة بيانات"
-    if not Config.DB_URI:
-        return is_database_working, output
-    from userbot.plugins.sql_helper import SESSION
-
-    try:
-        SESSION.execute("SELECT 1")
-    except Exception as e:
-        output = f"❌ {str(e)}"
-        is_database_working = False
-    else:
-        output = "تعمل بنجاح"
-        is_database_working = True
-    return is_database_working, output
-
 # =================== Owner - Kimo ===================
       
 Ping = "⌔∮ **سرعه الاستجابه ↫** `{}` ** ⇲**\n ⌔∮ **المستخدم ↫** {} **⇱**"
