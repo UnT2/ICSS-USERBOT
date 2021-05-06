@@ -16,6 +16,7 @@ from platform import python_version
 from telethon import version
 
 from userbot import *
+from datetime import datetime
 from platform import python_version
 from telethon import version
 from resources.strings import *
@@ -109,6 +110,14 @@ ALt = (
     f"**{ICSEM} اصدار البايثون  ↫** `{python_version()}\n`"
     f"**{ICSEM} المستخدم ↫** {mention}\n",
 )
+
+# =================== Owner - Kimo ===================
+
+S = datetime.now()
+E = datetime.now()
+M = (E - S).microseconds / 1000
+        
+Ping = "⌔∮ **سرعه الاستجابه ↫** `{}` ** ⇲**\n ⌔∮ **المستخدم ↫** {} **⇱**"
 
 # =================== Owner - Kimo ===================
 
