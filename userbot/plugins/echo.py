@@ -58,8 +58,8 @@ async def _(e):
 
 @icssbot.on(admin_cmd(pattern="قائمة الازعاج$"))
 @icssbot.on(sudo_cmd(pattern="قائمة الازعاج $", allow_sudo=True))
-async def echo(cat):
-    if cat.fwd_from:
+async def _(e):
+    if e.fwd_from:
         return
     lsts = get_all_echos()
     if len(lsts) > 0:
