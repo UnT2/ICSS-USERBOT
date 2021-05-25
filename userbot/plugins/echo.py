@@ -6,7 +6,7 @@ from telethon import events
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
 from .sql_helper.echo_sql import addecho, get_all_echos, is_echo, remove_echo
-
+from . import Echo, M
 
 @icssbot.on(icss_cmd(pattern="الازعاج$"))
 @icssbot.on(sudo_cmd(pattern="الازعاج$", allow_sudo=True))
