@@ -12,7 +12,7 @@ from userbot.plugins.assistant.sql_tosh.userbase_sql import add_to_userbase, pre
 from datetime import datetime
 from userbot.Config import Config
 from . import *
-from .. import mention
+from .. import M, O, mention
 from telegraph import Telegraph, upload_file
 
 # =================== OWNER - ANL0KE =================== #
@@ -831,3 +831,13 @@ async def alv_pic(event):
         await xx.edit(mssg)
     else:
         await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @rruuurr.", alert=True)
+
+# Help Asst
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"help"))
+          )  # Icss - Userbot
+async def _(e):
+    if e.sender_id == O:
+        await e.delete()
+        await asst.send_message(e.chat_id, HelpAsst)
+    else:
+        await e.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
